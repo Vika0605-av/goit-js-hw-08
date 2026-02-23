@@ -1,0 +1,14 @@
+body {
+background-color: #fff;
+
+
+
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1440px;
+    padding: 24px 156px;
+    margin: 0;
+}
