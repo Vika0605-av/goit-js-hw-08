@@ -1,14 +1,33 @@
 body {
 background-color: #fff;
-
-
-
+max-width: 1440px;
 }
-ul {
+
+.gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    max-width: 1440px;
-    padding: 24px 156px;
-    margin: 0;
+    justify-content: center;
 }
+
+.gallery-item {
+    width: calc((100% - 24px * 2)/3);
+     border-radius: 1px 1px 1px 1px;
+}
+.gallery-image {
+    width: 100%;
+    display: block;
+    border-radius: 1px 1px 1px 1px;
+}
+.basicLightbox-close {
+  position: absolute;
+  padding: 28px 164px;
+  cursor: pointer;
+  color: #2E2F42;
+  width: 1112px;
+  height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
