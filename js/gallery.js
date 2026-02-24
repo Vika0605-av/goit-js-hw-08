@@ -90,10 +90,9 @@ gallery.addEventListener('click', function (e) {
     return;
 }
 const priginal = e.target.dataset.source;
-const instance = const instance = basicLightbox.create(`
+const instance = basicLightbox.create(`
     <img src="assets/images/image.png" width="800" height="600">
-`);
+`)
 
 instance.show()
-  
  });
