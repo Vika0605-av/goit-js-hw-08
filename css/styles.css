@@ -30,4 +30,8 @@ max-width: 1440px;
   align-items: center;
   justify-content: center;
 }
-
+.gallery-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
