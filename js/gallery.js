@@ -66,7 +66,7 @@ const images = [
 ];
 console.log(images);
 
-function images(obj) {
+function createGalleryItem(obj) {
   return `<li class="gallery-item">
   <a class="gallery-link" href="${obj.original}">
     <img
@@ -78,20 +78,22 @@ function images(obj) {
   </a>
 </li>`;
 }
-function gallery(arr) {
-  return arr.map(images).join('');
+function createGallery(arr) {
+  return arr.map(createGalleryItem).join('');
 }
+gallery = createGallery(images);
 
 const gallery = document.querySelector('.js-gallery');
 gallery.innerHTML = gallery(images);
 gallery.addEventListener('click', function (e) {
   e.preventDefault();
+  const imageEl = e.target
   if (e.target === e.currentTarget) {
     return;
 }
-const priginal = e.target.dataset.source;
+const original = imageEl.dataset.source;
 const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
+    <img src="${original}width="800" height="600">
 `)
 
 instance.show()
