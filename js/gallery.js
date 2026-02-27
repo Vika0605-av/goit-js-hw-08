@@ -83,18 +83,23 @@ function createGallery(arr) {
 }
 gallery = createGallery(images);
 
-const gallery = document.querySelector('.js-gallery');
-gallery.innerHTML = gallery(images);
-gallery.addEventListener('click', function (e) {
-  e.preventDefault();
-  const imageEl = e.target
-  if (e.target === e.currentTarget) {
-    return;
-}
-const original = imageEl.dataset.source;
-const instance = basicLightbox.create(`
-    <img src="${original}width="800" height="600">
-`)
+const galleryEl = document.querySelector('.js-gallery');
 
-instance.show()
- });
+const markup = createGallery(images);
+galleryEl.innerHTML = markup;
+
+galleryEl.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  const original = e.target.dataset.source;
+
+  const instance = basicLightbox.create(`
+    <img src="${original}" width="800" height="600">
+  `);
+
+  instance.show();
+});
