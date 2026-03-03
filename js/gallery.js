@@ -82,7 +82,6 @@ function createGalleryItem(obj) {
 function createGallery(arr) {
   return arr.map(createGalleryItem).join('');
 }
-gallery = createGallery(images);
 
 const galleryEl = document.querySelector('.js-gallery');
 
