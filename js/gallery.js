@@ -67,7 +67,8 @@ const images = [
 console.log(images);
 
 function createGalleryItem(obj) {
-  return `<li class="gallery-item">
+  return `
+  <li class="gallery-item">
   <a class="gallery-link" href="${obj.original}">
     <img
       class="gallery-image"
@@ -91,7 +92,7 @@ galleryEl.innerHTML = markup;
 galleryEl.addEventListener('click', function (e) {
   e.preventDefault();
 
-  if (e.target.nodeName !== 'IMG') {
+  if (e.target.tagName === 'IMG') {
     return;
   }
 
