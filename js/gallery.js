@@ -91,7 +91,7 @@ galleryEl.innerHTML = markup;
 galleryEl.addEventListener('click', function (e) {
   e.preventDefault();
 
-  if (e.target.tagName === 'IMG') {
+  if (e.target.tagName !== 'IMG') {
     return;
   }
 
